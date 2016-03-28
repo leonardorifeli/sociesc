@@ -54,6 +54,22 @@ main() {
 	regFuncionario func;
 	vector <regFuncionario> tabelaFuncionarios;
 
+	ifstream file;
+	file.open("surveys.txt");
+
+	while(not file.eof()) {
+		getline(file, func.matricula, ';');
+		getline(file, func.nome, ';');
+		getline(file, func.setor, ';');
+		getline(file, func.email, ';');
+		getline(file, func.ramal);
+
+		if(func.matricula == "") break;
+
+		tabelaFuncionarios.push_back(func);
+	}
+
+	file.close();
 
 	while (true) {
 		textcolor(BLACK);
@@ -179,5 +195,21 @@ main() {
 				}
 			}
 		}
+
+		ofstream file;
+		file.open("surveys.txt");
+
+		for(x=0; x < tabelaFuncionarios.size(); x++) {
+			func = tabelaFuncionarios[x];
+
+			file << func.matricula << ";"
+			<< func.nome << ";"
+			<< func.setor << ";"
+			<< func.email << ";"
+			<< func.ramal << ";" endl;
+		}
+
+		file.close;
+
 	}
 }
