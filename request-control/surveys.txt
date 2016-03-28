@@ -1,0 +1,3 @@
+matricula;nome;setor;email;ramal
+1020;Leonardo Rifeli;CPT;leonardorifeli@gmail.com;1025
+1021;Adauto Periziario;CPT;adauto.periziario@gmail.com;1025
